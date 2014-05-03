@@ -11,7 +11,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "hashicorp/precise32"
-  config.vm.provision :shell, :path => "bootstrap.sh"
   config.vm.network "private_network", type: "dhcp"
   config.vm.network :forwarded_port, host: 8091, guest:8091
   config.vm.network :forwarded_port, host: 8092, guest:8092
@@ -80,10 +79,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # You will need to create the manifests directory and a manifest in
   # the file default.pp in the manifests_path directory.
   #
-  # config.vm.provision "puppet" do |puppet|
-  #   puppet.manifests_path = "manifests"
-  #   puppet.manifest_file  = "site.pp"
-  # end
+  config.vm.provision "puppet" do |puppet|
+    puppet.manifests_path = "puppet/manifests"
+    puppet.manifest_file  = "site.pp"
+  end
 
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
   # path, and data_bags path (all relative to this Vagrantfile), and adding

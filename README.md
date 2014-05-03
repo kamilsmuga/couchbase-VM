@@ -5,7 +5,7 @@ Vagrant configuration to setup Ubuntu 12.04 32bit and provision Couchbase Commun
 1. Install vagrant: http://docs.vagrantup.com/v2/installation/index.html
 2. Clone me: https://github.com/kamilsmuga/couchbase-VM.git
 3. `vagrant up`
-4. `vagrant ssh`
+4. `vagrant ssh` <br />
 Note: IP of new VM is taken from DHCP. Ports 8091 and 8092 are forwarded to
 localhost.
 
