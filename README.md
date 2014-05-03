@@ -9,5 +9,5 @@ Vagrant configuration to setup Ubuntu 12.04 32bit and provision Couchbase Commun
 Note: IP of new VM is taken from DHCP. Ports 8091 and 8092 are forwarded to
 localhost.
 
-### Tips 
+## Tips 
 For a fresh Virtualbox installation there is a problem with dhcp server configuration. For a workaround refer to https://github.com/mitchellh/vagrant/issues/3083
