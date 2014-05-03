@@ -12,14 +12,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "hashicorp/precise32"
   config.vm.provision :shell, :path => "bootstrap.sh"
-  config.vm.network :forwarded_port, host: 11211, guest:11211
-  config.vm.network :forwarded_port, host: 11210, guest:11210
-  config.vm.network :forwarded_port, host: 11209, guest:11209
-  config.vm.network :forwarded_port, host: 4369, guest:4369
-  config.vm.network :forwarded_port, host: 8091, guest:8091
-  config.vm.network :forwarded_port, host: 8092, guest:8092
-# from 21100 to 21299
-  # Disable automatic box update checking. If you disable this, then
+  config.vm.network "private_network", type: "dhcp"
+   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
   # config.vm.box_check_update = false
